@@ -17,6 +17,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     
     @IBOutlet weak var signupOrLogin: UIButton!
     
@@ -33,11 +35,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
     @IBAction func signupOrLogin(_ sender: AnyObject) {
         if usernameTextField.text == "" || passwordTextField.text == "" {
             
             createAlert(title: "Error in form", message: "Please enter a username and password")
+            
+        } else if signupMode && (firstNameTextField.text == "" || lastNameTextField.text == "") {
+            
+            createAlert(title: "Error in form", message: "Please enter a name")
             
         } else if usernameTextField.text?.characters.index(of: " ") != nil {
         
@@ -64,6 +69,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 user.username = usernameTextField.text
                 user.password = passwordTextField.text
+                user["firstName"] = firstNameTextField.text
+                user["lastName"] = lastNameTextField.text
                 
                 user.signUpInBackground(block: {(success, error) in
                     
@@ -127,18 +134,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             signupOrLogin.setTitle("Log In", for: [])
             changeSignupModeButton.setTitle("Sign Up", for: [])
+            pleaseMessageLabel.text = "Please enter username and password:"
             messageLabel.text = "Don't have an account?"
+            firstNameTextField.isHidden = true
+            lastNameTextField.isHidden = true
+
             
             signupMode = false
         } else {
             signupOrLogin.setTitle("Sign Up", for: [])
             changeSignupModeButton.setTitle("Log In", for: [])
+            pleaseMessageLabel.text = "Please register:"
             messageLabel.text = "Already have an account?"
+            firstNameTextField.isHidden = false
+            lastNameTextField.isHidden = false
             
             signupMode = true
         }
     }
     
+    @IBOutlet weak var pleaseMessageLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
@@ -154,6 +169,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if textField == self.usernameTextField {
             // Jump to password field from username field
             self.passwordTextField.becomeFirstResponder()
+        } else if textField == self.passwordTextField && signupMode {
+            self.firstNameTextField.becomeFirstResponder()
+        } else if textField == self.firstNameTextField {
+            self.lastNameTextField.becomeFirstResponder()
         } else {
             // Otherwise close keyboard
             textField.resignFirstResponder()
