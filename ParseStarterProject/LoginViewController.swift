@@ -22,35 +22,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signupOrLogin: UIButton!
     
-    func createAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title,
-                                      message: message,
-                                      preferredStyle: UIAlertControllerStyle.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            
-            // self.dismiss(animated: true, completion: nil) // Was dismissing the UIView instead of the alert.
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func signupOrLogin(_ sender: AnyObject) {
         if usernameTextField.text == "" || passwordTextField.text == "" {
             
-            createAlert(title: "Error in form", message: "Please enter a username and password")
+            createOkAlert(title: "Error in form", message: "Please enter a username and password")
             
         } else if signupMode && (firstNameTextField.text == "" || lastNameTextField.text == "") {
             
-            createAlert(title: "Error in form", message: "Please enter a name")
+            createOkAlert(title: "Error in form", message: "Please enter a name")
             
         } else if usernameTextField.text?.characters.index(of: " ") != nil {
         
-            createAlert(title: "Error in form", message: "Please no whitespaces in username")
+            createOkAlert(title: "Error in form", message: "Please no whitespaces in username")
             
         } else if passwordTextField.text?.characters.index(of: " ") != nil {
             
-            createAlert(title: "Error in form", message: "Please no whitespaces in password")
+            createOkAlert(title: "Error in form", message: "Please no whitespaces in password")
             
         } else {
             
@@ -65,8 +52,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 user.password = passwordTextField.text
                 user["firstName"] = firstNameTextField.text
                 user["lastName"] = lastNameTextField.text
-                
-            
                 
                 user.signUpInBackground(block: {(success, error) in
                     
@@ -83,7 +68,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             displayErrorMessage = errorMesage
                         }
                         
-                        self.createAlert(title: "Signup Error", message: displayErrorMessage)
+                        self.createOkAlert(title: "Signup Error", message: displayErrorMessage)
                         
                     } else {
                         print("User signed up")
@@ -110,7 +95,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             displayErrorMessage = errorMesage
                         }
                         
-                        self.createAlert(title: "Login Error", message: displayErrorMessage)
+                        self.createOkAlert(title: "Login Error", message: displayErrorMessage)
                         
                     } else {
                         print("Logged in")
