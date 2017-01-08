@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     var signupMode = true
     
@@ -149,9 +149,22 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == self.usernameTextField {
+            // Jump to password field from username field
+            self.passwordTextField.becomeFirstResponder()
+        } else {
+            // Otherwise close keyboard
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
     override func viewDidLoad() {
- 
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func didReceiveMemoryWarning() {
