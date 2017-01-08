@@ -54,13 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             
-            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-            view.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
-            UIApplication.shared.beginIgnoringInteractionEvents()
+            showActivityIndicator()
             
             if signupMode {
                 // Sign Up
@@ -181,6 +175,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    func showActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     override func viewDidLoad() {

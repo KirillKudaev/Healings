@@ -10,10 +10,11 @@ import UIKit
 import Parse
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBAction func logout(_ sender: AnyObject) {
+        
         PFUser.logOut()
         
         performSegue(withIdentifier: "logoutSegue", sender: self)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560E80B11E22EB25002477EC /* AnonMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 560E80AF1E22EB25002477EC /* AnonMask.png */; };
+		560E80B21E22EB25002477EC /* AnonMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560E80B01E22EB25002477EC /* AnonMask@2x.png */; };
 		56A034BC1E212ACA009A9710 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A034A51E212ACA009A9710 /* Home.png */; };
 		56A034BD1E212ACA009A9710 /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A034A61E212ACA009A9710 /* Home@2x.png */; };
 		56A034BE1E212ACA009A9710 /* Home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A034A71E212ACA009A9710 /* Home@3x.png */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560E80AF1E22EB25002477EC /* AnonMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnonMask.png; sourceTree = "<group>"; };
+		560E80B01E22EB25002477EC /* AnonMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AnonMask@2x.png"; sourceTree = "<group>"; };
 		56A034A51E212ACA009A9710 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
 		56A034A61E212ACA009A9710 /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@2x.png"; sourceTree = "<group>"; };
 		56A034A71E212ACA009A9710 /* Home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home@3x.png"; sourceTree = "<group>"; };
@@ -95,9 +99,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560E80AE1E22EB25002477EC /* AnonMask */ = {
+			isa = PBXGroup;
+			children = (
+				560E80AF1E22EB25002477EC /* AnonMask.png */,
+				560E80B01E22EB25002477EC /* AnonMask@2x.png */,
+			);
+			path = AnonMask;
+			sourceTree = "<group>";
+		};
 		56A034A21E212ACA009A9710 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				560E80AE1E22EB25002477EC /* AnonMask */,
 				56A034A31E212ACA009A9710 /* TabBar */,
 			);
 			path = Images;
@@ -303,10 +317,12 @@
 			files = (
 				56A034CC1E212ACA009A9710 /* ProfileFilled@2x.png in Resources */,
 				56A034C21E212ACA009A9710 /* Post.png in Resources */,
+				560E80B21E22EB25002477EC /* AnonMask@2x.png in Resources */,
 				56A034C11E212ACA009A9710 /* HomeFilled@3x.png in Resources */,
 				56A034BC1E212ACA009A9710 /* Home.png in Resources */,
 				56A034CB1E212ACA009A9710 /* ProfileFilled.png in Resources */,
 				56A034C51E212ACA009A9710 /* PostFilled.png in Resources */,
+				560E80B11E22EB25002477EC /* AnonMask.png in Resources */,
 				56A034C81E212ACA009A9710 /* Profile.png in Resources */,
 				56A034C01E212ACA009A9710 /* HomeFilled@2x.png in Resources */,
 				56A034C61E212ACA009A9710 /* PostFilled@2x.png in Resources */,

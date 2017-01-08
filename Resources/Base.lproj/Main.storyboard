@@ -155,7 +155,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKl-Pg-Q2I" id="pof-yj-mn2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -230,6 +230,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iHi-q3-EXe">
                                 <rect key="frame" x="300" y="456" width="51" height="31"/>
                                 <color key="onTintColor" red="0.33333333333333331" green="0.7803921568627451" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="makeAnon:" destination="3k2-Bd-mTR" eventType="valueChanged" id="qjd-dQ-39G"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publish it anonymously?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZp-ra-ji7">
                                 <rect key="frame" x="16" y="461" width="182.5" height="20"/>
@@ -266,13 +269,29 @@
                                     <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nal-n3-hRG">
+                                <rect key="frame" x="237" y="556" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="V3R-e3-pHY"/>
+                                    <constraint firstAttribute="width" constant="40" id="wdy-kO-abb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZsI-zz-e7N">
+                                <rect key="frame" x="97" y="556" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="lTq-1H-qtC"/>
+                                    <constraint firstAttribute="height" constant="40" id="ulR-v7-9Dk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AZp-ra-ji7" firstAttribute="leading" secondItem="iWZ-Yn-xfq" secondAttribute="leadingMargin" id="86C-dY-vhV"/>
                             <constraint firstItem="YMh-Cn-6oM" firstAttribute="leading" secondItem="iWZ-Yn-xfq" secondAttribute="leadingMargin" id="8Ur-So-1Yx"/>
                             <constraint firstItem="YMh-Cn-6oM" firstAttribute="top" secondItem="HKx-BJ-3yk" secondAttribute="bottom" constant="8" id="986-XY-fxd"/>
+                            <constraint firstItem="Nal-n3-hRG" firstAttribute="top" secondItem="GQL-df-W7c" secondAttribute="top" constant="5" id="D0B-VP-5Kh"/>
                             <constraint firstItem="NmS-Xn-Xne" firstAttribute="top" secondItem="GQL-df-W7c" secondAttribute="bottom" constant="17" id="GuQ-ne-LJo"/>
+                            <constraint firstItem="ZsI-zz-e7N" firstAttribute="top" secondItem="GQL-df-W7c" secondAttribute="top" constant="5" id="LEk-GA-lAy"/>
                             <constraint firstItem="iHi-q3-EXe" firstAttribute="top" secondItem="YMh-Cn-6oM" secondAttribute="bottom" constant="18" id="LIE-ib-ptp"/>
                             <constraint firstItem="AZp-ra-ji7" firstAttribute="top" secondItem="YMh-Cn-6oM" secondAttribute="bottom" constant="23" id="RdE-Y0-cxP"/>
                             <constraint firstItem="HKx-BJ-3yk" firstAttribute="trailing" secondItem="iWZ-Yn-xfq" secondAttribute="trailingMargin" id="S7K-np-XLu"/>
@@ -280,8 +299,10 @@
                             <constraint firstItem="KPj-nP-vhc" firstAttribute="trailing" secondItem="iWZ-Yn-xfq" secondAttribute="trailingMargin" id="VYG-vN-kCL"/>
                             <constraint firstItem="HKx-BJ-3yk" firstAttribute="leading" secondItem="iWZ-Yn-xfq" secondAttribute="leadingMargin" id="Vlq-oc-p9C"/>
                             <constraint firstItem="HKx-BJ-3yk" firstAttribute="top" secondItem="2CB-me-OhY" secondAttribute="bottom" constant="55" id="Xc8-Sf-NAx"/>
+                            <constraint firstItem="ZsI-zz-e7N" firstAttribute="leading" secondItem="GQL-df-W7c" secondAttribute="leading" constant="7" id="Z52-E8-S9M"/>
                             <constraint firstItem="KPj-nP-vhc" firstAttribute="leading" secondItem="iWZ-Yn-xfq" secondAttribute="leadingMargin" id="dSe-QQ-s1n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iHi-q3-EXe" secondAttribute="trailing" constant="10" id="ehH-Oe-ONn"/>
+                            <constraint firstItem="Nal-n3-hRG" firstAttribute="trailing" secondItem="GQL-df-W7c" secondAttribute="trailing" constant="-7" id="hK3-Gt-AzO"/>
                             <constraint firstItem="KPj-nP-vhc" firstAttribute="leading" secondItem="iWZ-Yn-xfq" secondAttribute="leadingMargin" id="mD0-eA-kCk"/>
                             <constraint firstItem="GQL-df-W7c" firstAttribute="top" secondItem="KPj-nP-vhc" secondAttribute="bottom" constant="15" id="t0l-sA-aX6"/>
                             <constraint firstItem="YMh-Cn-6oM" firstAttribute="trailing" secondItem="iWZ-Yn-xfq" secondAttribute="trailingMargin" id="vpR-jP-BNi"/>
@@ -290,7 +311,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Share" id="hee-L1-yXy"/>
                     <connections>
-                        <outlet property="healingTextView" destination="YMh-Cn-6oM" id="8cH-Ky-cOh"/>
+                        <outlet property="anonSwitch" destination="iHi-q3-EXe" id="cTZ-RN-3qv"/>
+                        <outlet property="healingText" destination="YMh-Cn-6oM" id="LfJ-fp-wtY"/>
+                        <outlet property="leftMaskImage" destination="ZsI-zz-e7N" id="37y-Ep-Nyo"/>
+                        <outlet property="rightMaskImage" destination="Nal-n3-hRG" id="9gC-zu-x9p"/>
                         <outlet property="titleLabel" destination="HKx-BJ-3yk" id="LXP-c8-l0R"/>
                     </connections>
                 </viewController>
