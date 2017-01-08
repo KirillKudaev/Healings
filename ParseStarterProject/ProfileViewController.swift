@@ -11,6 +11,8 @@ import Parse
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBAction func logout(_ sender: AnyObject) {
         PFUser.logOut()
         
@@ -19,24 +21,15 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.navigationItem.title  = PFUser.current()?.username
+        
+        if (PFUser.current()?["firstName"] != nil && PFUser.current()?["lastName"] != nil) {
+            nameLabel.text = (PFUser.current()?["firstName"] as! String) + " " + (PFUser.current()?["lastName"] as! String)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
