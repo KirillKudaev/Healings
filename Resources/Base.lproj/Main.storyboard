@@ -53,9 +53,16 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJt-nM-sXo">
-                                <rect key="frame" x="145" y="491" width="85" height="41"/>
+                                <rect key="frame" x="92" y="484" width="190" height="48"/>
+                                <color key="backgroundColor" red="0.91028096462961428" green="0.91504683355437666" blue="0.91504683355437666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="ljP-qh-omt"/>
+                                    <constraint firstAttribute="height" constant="48" id="uRL-WD-LUd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.78039215689999997" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signupOrLogin:" destination="eOd-7o-VaF" eventType="touchUpInside" id="qxz-fM-lUl"/>
                                 </connections>
@@ -93,7 +100,10 @@
                                     <constraint firstAttribute="width" constant="60" id="YKo-Gh-Xnr"/>
                                     <constraint firstAttribute="height" constant="30" id="hXA-oG-scK"/>
                                 </constraints>
-                                <state key="normal" title="Log In"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFontEmphasized" family=".AppleSystemUIFont" pointSize="16"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="changeSignupMode:" destination="eOd-7o-VaF" eventType="touchUpInside" id="cTa-sb-EcL"/>
                                 </connections>
@@ -106,10 +116,8 @@
                             <constraint firstItem="rLm-ul-B2h" firstAttribute="leading" secondItem="rRn-mU-Hun" secondAttribute="leadingMargin" constant="9" id="4wE-Sl-Cq7"/>
                             <constraint firstItem="fJc-6n-qCa" firstAttribute="top" secondItem="p6s-57-heO" secondAttribute="bottom" constant="8" id="AsE-PN-WCf"/>
                             <constraint firstItem="53N-1k-ckq" firstAttribute="trailing" secondItem="rRn-mU-Hun" secondAttribute="trailingMargin" id="Fts-np-pFd"/>
-                            <constraint firstItem="jJt-nM-sXo" firstAttribute="top" secondItem="fJc-6n-qCa" secondAttribute="bottom" constant="111" id="GGc-se-pLA"/>
                             <constraint firstItem="jJt-nM-sXo" firstAttribute="centerX" secondItem="rRn-mU-Hun" secondAttribute="centerX" id="KiJ-Ud-FVy"/>
                             <constraint firstItem="vpd-wW-xmq" firstAttribute="leading" secondItem="rRn-mU-Hun" secondAttribute="leadingMargin" id="OQJ-20-1xz"/>
-                            <constraint firstItem="IPk-ru-NjX" firstAttribute="top" secondItem="H78-sg-aSI" secondAttribute="bottom" constant="86" id="Rhr-JQ-YDh"/>
                             <constraint firstItem="H78-sg-aSI" firstAttribute="leading" secondItem="rRn-mU-Hun" secondAttribute="leadingMargin" id="UJv-qe-Cy2"/>
                             <constraint firstItem="p6s-57-heO" firstAttribute="top" secondItem="vpd-wW-xmq" secondAttribute="bottom" constant="17" id="XyC-zI-ohO"/>
                             <constraint firstItem="vpd-wW-xmq" firstAttribute="trailing" secondItem="rRn-mU-Hun" secondAttribute="trailingMargin" id="ZOr-uQ-7Kx"/>
@@ -118,6 +126,8 @@
                             <constraint firstItem="53N-1k-ckq" firstAttribute="leading" secondItem="rRn-mU-Hun" secondAttribute="leadingMargin" id="cGg-MU-f2r"/>
                             <constraint firstItem="vpd-wW-xmq" firstAttribute="top" secondItem="1pi-Z0-c3y" secondAttribute="bottom" constant="78" id="eDW-Ub-7Oo"/>
                             <constraint firstItem="IPk-ru-NjX" firstAttribute="leading" secondItem="rLm-ul-B2h" secondAttribute="trailing" id="f9E-nN-b3u"/>
+                            <constraint firstItem="jJt-nM-sXo" firstAttribute="top" secondItem="H78-sg-aSI" secondAttribute="bottom" constant="28" id="jZr-Ua-xat"/>
+                            <constraint firstItem="IPk-ru-NjX" firstAttribute="top" secondItem="H78-sg-aSI" secondAttribute="bottom" constant="86" id="l97-1J-HEO"/>
                             <constraint firstItem="1pi-Z0-c3y" firstAttribute="top" secondItem="iEf-7a-vwm" secondAttribute="bottom" constant="136" id="n2g-ZU-o55"/>
                             <constraint firstItem="1pi-Z0-c3y" firstAttribute="centerX" secondItem="rRn-mU-Hun" secondAttribute="centerX" id="nhz-Yr-9nr"/>
                             <constraint firstItem="H78-sg-aSI" firstAttribute="trailing" secondItem="rRn-mU-Hun" secondAttribute="trailingMargin" id="s5p-me-LYF"/>
@@ -226,6 +236,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3k2-Bd-mTR" id="WFi-se-TOR"/>
+                                </connections>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iHi-q3-EXe">
                                 <rect key="frame" x="300" y="456" width="51" height="31"/>
@@ -255,7 +268,10 @@
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3k2-Bd-mTR" id="O6o-6Q-NZE"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-df-W7c">
                                 <rect key="frame" x="90" y="551" width="194" height="50"/>
@@ -318,7 +334,7 @@
                         <outlet property="healingText" destination="YMh-Cn-6oM" id="LfJ-fp-wtY"/>
                         <outlet property="leftMaskImage" destination="ZsI-zz-e7N" id="37y-Ep-Nyo"/>
                         <outlet property="rightMaskImage" destination="Nal-n3-hRG" id="9gC-zu-x9p"/>
-                        <outlet property="titleLabel" destination="HKx-BJ-3yk" id="LXP-c8-l0R"/>
+                        <outlet property="titleTextField" destination="HKx-BJ-3yk" id="Uoo-55-UpJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXN-4U-rjA" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,11 +9,11 @@
 import UIKit
 import Parse
 
-class ShareViewController: UIViewController {
+class ShareViewController: UIViewController, UITextFieldDelegate {
 
     var activityIndicator = UIActivityIndicatorView()
     
-    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var healingText: UITextView!
     
     @IBOutlet weak var anonSwitch: UISwitch!
@@ -33,23 +33,43 @@ class ShareViewController: UIViewController {
     
     @IBAction func publish(_ sender: Any) {
         
-        showActivityIndicator()
-        
         var healing = PFObject(className:"Healing")
-        healing["username"] = PFUser.current()?.username
-        healing["title"] = titleLabel.text
-        healing["body"] = healingText.text
-        healing["anon"] = anonSwitch.isOn
         
-        healing.saveInBackground { (succcess, error) in
+        if !anonSwitch.isOn {
+            healing["username"] = PFUser.current()?.username
+        }
+        
+        if titleTextField.text == "" {
             
-            self.activityIndicator.stopAnimating()
-            UIApplication.shared.endIgnoringInteractionEvents()
+            createOkAlert(title: "Error in form", message: "Please enter a title")
             
-            if error != nil {
-                self.createOkAlert(title: "Could not post healing", message: "Please try again")
-            } else {
-                self.createOkAlert(title: "Posted!", message: "Your healing has been posted!")
+        } else if healingText.text == "" {
+            
+            createOkAlert(title: "Error in form", message: "Please tell us your story")
+            
+        } else {
+            
+            showActivityIndicator()
+            
+            healing["title"] = titleTextField.text
+            healing["body"] = healingText.text
+            healing["anon"] = anonSwitch.isOn
+            
+            healing.saveInBackground { (succcess, error) in
+                
+                self.activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                if error != nil {
+                    self.createOkAlert(title: "Could not post healing", message: "Please try again")
+                } else {
+                    self.createOkAlert(title: "Posted!", message: "Your healing has been posted!")
+                    self.healingText.text = "";
+                    self.titleTextField.text = "";
+                    self.anonSwitch.setOn(false, animated: true)
+                    self.leftMaskImage.image = UIImage(named: "")
+                    self.rightMaskImage.image = UIImage(named: "")
+                }
             }
         }
     }
@@ -62,6 +82,15 @@ class ShareViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == self.titleTextField {
+            healingText.becomeFirstResponder()
+        }
+        
+        return true
     }
     
     override func viewDidLoad() {
