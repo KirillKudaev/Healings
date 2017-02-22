@@ -7,11 +7,49 @@
 //
 
 import UIKit
+import Parse
 
 class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        var healingsArray = Array<Healing>()
+        
+        let query = PFQuery(className:"Healing")
+        query.order(byDescending: "createdAt")
+        query.limit = 1000
+        query.findObjectsInBackground { (objects, error) -> Void in
+            if error == nil {
+                for object in objects! {
+                    
+                    var healing: Healing
+                    
+                    if (object["anon"] as! Bool == true) {
+                        healing = Healing(anon: object["anon"] as! Bool,
+                                          title: object["title"] as! String,
+                                          body: object["body"] as! String,
+                                          createdAt: object.createdAt!,
+                                          updatedAt: object.updatedAt!)
+                    } else {
+                        healing = Healing(userName: object["username"] as! String,
+                                          anon: object["anon"] as! Bool,
+                                          title: object["title"] as! String,
+                                          body: object["body"] as! String,
+                                          createdAt: object.createdAt!,
+                                          updatedAt: object.updatedAt!)
+                    }
+                    
+                    healingsArray.append(healing)
+                }
+                
+                print(healingsArray)   // Testing.
+                print("")
+                print("Count: " + String(healingsArray.count))
+            } else {
+                print(error)
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,7 +80,7 @@ class HomeTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
