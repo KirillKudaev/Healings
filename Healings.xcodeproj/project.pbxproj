@@ -40,6 +40,7 @@
 		81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81781A49E0DB00E65899 /* AudioToolbox.framework */; };
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
+		AB01EAD51E54D23600A240A3 /* Healing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01EAD41E54D23600A240A3 /* Healing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		AB01EAD41E54D23600A240A3 /* Healing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Healing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				56A034D41E21A8EB009A9710 /* ProfileViewController.swift */,
 				56A034D21E21A63B009A9710 /* LoginViewController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
+				AB01EAD41E54D23600A240A3 /* Healing.swift */,
 				56A034D61E22B792009A9710 /* ShareViewController.swift */,
 			);
 			name = Healings;
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB01EAD51E54D23600A240A3 /* Healing.swift in Sources */,
 				56A034D31E21A63B009A9710 /* LoginViewController.swift in Sources */,
 				56A034D11E215A67009A9710 /* HomeTableViewController.swift in Sources */,
 				56A034D71E22B792009A9710 /* ShareViewController.swift in Sources */,
