@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class HomeTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +41,7 @@ class HomeTableViewController: UITableViewController {
                     }
                     
                     healingsArray.append(healing)
+                    // Reload table here
                 }
                 
                 print(healingsArray)   // Testing.
@@ -73,23 +74,26 @@ class HomeTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
     
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HealingCell
 
         // Configure the cell...
-
+        cell.userNameLabel.text = "deborahKelly"
+        cell.titleLabel.text = "Healing While Running"
+        cell.numberOfHrsAgo.text = "3 HRS AGO"
+        cell.userImage.image = UIImage(named: "AnonMask.png")
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
