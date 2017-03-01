@@ -11,10 +11,10 @@ import Parse
 
 class HomeTableViewController: UITableViewController {
     
+    var healingsArray = Array<Healing>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var healingsArray = Array<Healing>()
         
         let query = PFQuery(className:"Healing")
         query.order(byDescending: "createdAt")
@@ -40,13 +40,15 @@ class HomeTableViewController: UITableViewController {
                                           updatedAt: object.updatedAt!)
                     }
                     
-                    healingsArray.append(healing)
-                    // Reload table here
+                    self.healingsArray.append(healing)
+                    
+                    // Reload tableview
+                    self.tableView.reloadData()
                 }
                 
-                print(healingsArray)   // Testing.
+                print(self.healingsArray)   // Testing.
                 print("")
-                print("Count: " + String(healingsArray.count))
+                print("Count: " + String(self.healingsArray.count))
             } else {
                 print(error)
             }
@@ -79,7 +81,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return self.healingsArray.count
     }
     
     
@@ -87,10 +89,16 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HealingCell
 
         // Configure the cell...
-        cell.userNameLabel.text = "deborahKelly"
-        cell.titleLabel.text = "Healing While Running"
+        if (self.healingsArray[indexPath.row].userName != nil) {
+            cell.userNameLabel.text = self.healingsArray[indexPath.row].userName
+        } else {
+            cell.userNameLabel.text = "anon"
+        }
+        
+        cell.titleLabel.text = self.healingsArray[indexPath.row].title
+        cell.healingContentLabel.text = self.healingsArray[indexPath.row].body
         cell.numberOfHrsAgo.text = "3 HRS AGO"
-        cell.userImage.image = UIImage(named: "AnonMask.png")
+        //cell.userImage.image = UIImage(named: "AnonMask.png")
         return cell
     }
 

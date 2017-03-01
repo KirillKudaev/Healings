@@ -31,6 +31,7 @@
 		56A034D31E21A63B009A9710 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A034D21E21A63B009A9710 /* LoginViewController.swift */; };
 		56A034D51E21A8EB009A9710 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A034D41E21A8EB009A9710 /* ProfileViewController.swift */; };
 		56A034D71E22B792009A9710 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A034D61E22B792009A9710 /* ShareViewController.swift */; };
+		56ADE1221E66620200618881 /* HealingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE1211E66620200618881 /* HealingViewController.swift */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 		56A034D21E21A63B009A9710 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56A034D41E21A8EB009A9710 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		56A034D61E22B792009A9710 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		56ADE1211E66620200618881 /* HealingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealingViewController.swift; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				56A034D41E21A8EB009A9710 /* ProfileViewController.swift */,
 				56A034D21E21A63B009A9710 /* LoginViewController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
+				56ADE1211E66620200618881 /* HealingViewController.swift */,
 				AB294A841E612A4700DAEF87 /* HealingCell.swift */,
 				AB01EAD41E54D23600A240A3 /* Healing.swift */,
 				56A034D61E22B792009A9710 /* ShareViewController.swift */,
@@ -358,6 +361,7 @@
 				56A034D31E21A63B009A9710 /* LoginViewController.swift in Sources */,
 				56A034D11E215A67009A9710 /* HomeTableViewController.swift in Sources */,
 				56A034D71E22B792009A9710 /* ShareViewController.swift in Sources */,
+				56ADE1221E66620200618881 /* HealingViewController.swift in Sources */,
 				56A034D51E21A8EB009A9710 /* ProfileViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);
