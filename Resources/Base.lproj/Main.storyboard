@@ -230,17 +230,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Healings" id="woh-Rd-5N4"/>
                     <connections>
-                        <segue destination="2ha-fF-iyM" kind="show" identifier="openHealing" id="bbg-Yd-4zQ"/>
+                        <segue destination="2ha-fF-iyM" kind="show" identifier="showHealing" id="bbg-Yd-4zQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ck-ae-bkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2704.8000000000002" y="-106.59670164917542"/>
         </scene>
-        <!--View Controller-->
+        <!--Healing View Controller-->
         <scene sceneID="uVD-4v-gwS">
             <objects>
-                <viewController id="2ha-fF-iyM" sceneMemberID="viewController">
+                <viewController id="2ha-fF-iyM" customClass="HealingViewController" customModule="Healings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1cx-jA-vuH"/>
                         <viewControllerLayoutGuide type="bottom" id="9dc-r5-LSS"/>
@@ -248,12 +248,62 @@
                     <view key="view" contentMode="scaleToFill" id="7ht-gm-nan">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfM-EM-Fiu">
+                                <rect key="frame" x="44" y="102" width="274" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2F4-Em-uiB"/>
+                                    <constraint firstAttribute="width" constant="274" id="unl-3P-NUl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgg-1y-7nn">
+                                <rect key="frame" x="53" y="140" width="265" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="S0y-4T-Xq0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="healing content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpd-s5-tAr">
+                                <rect key="frame" x="6" y="173" width="359" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3 HRS ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfT-lY-Way">
+                                <rect key="frame" x="242" y="531" width="117" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AfM-EM-Fiu" firstAttribute="top" secondItem="1cx-jA-vuH" secondAttribute="bottom" constant="38" id="6Wf-5G-SZU"/>
+                            <constraint firstItem="tgg-1y-7nn" firstAttribute="centerX" secondItem="7ht-gm-nan" secondAttribute="centerX" id="9P8-Xe-hFA"/>
+                            <constraint firstItem="tpd-s5-tAr" firstAttribute="leading" secondItem="7ht-gm-nan" secondAttribute="leading" constant="10" id="C9f-z4-ucg"/>
+                            <constraint firstItem="XfT-lY-Way" firstAttribute="trailing" secondItem="7ht-gm-nan" secondAttribute="trailingMargin" id="E8o-a6-VC0"/>
+                            <constraint firstItem="AfM-EM-Fiu" firstAttribute="centerX" secondItem="7ht-gm-nan" secondAttribute="centerX" id="FKh-rm-9l7"/>
+                            <constraint firstItem="tpd-s5-tAr" firstAttribute="centerX" secondItem="7ht-gm-nan" secondAttribute="centerX" id="QbZ-2f-Wqj"/>
+                            <constraint firstItem="tpd-s5-tAr" firstAttribute="top" secondItem="AfM-EM-Fiu" secondAttribute="bottom" constant="41" id="Sx5-xf-pZi"/>
+                            <constraint firstItem="9dc-r5-LSS" firstAttribute="top" secondItem="XfT-lY-Way" secondAttribute="bottom" constant="63" id="d8m-Ir-6Re"/>
+                            <constraint firstAttribute="trailing" secondItem="tpd-s5-tAr" secondAttribute="trailing" constant="10" id="eZN-sA-T9B"/>
+                            <constraint firstItem="tgg-1y-7nn" firstAttribute="top" secondItem="AfM-EM-Fiu" secondAttribute="bottom" constant="8" id="uZB-Th-qEe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblHealingContent" destination="tpd-s5-tAr" id="eq4-iF-7gt"/>
+                        <outlet property="lblTitle" destination="tgg-1y-7nn" id="KCb-mO-zc1"/>
+                        <outlet property="lblUserName" destination="AfM-EM-Fiu" id="q9L-mt-C1o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Toe-tA-2hl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3429" y="-131"/>
+            <point key="canvasLocation" x="3476" y="-99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bJp-iD-uNu">

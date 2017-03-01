@@ -102,6 +102,12 @@ class HomeTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _ = tableView.indexPathForSelectedRow!
+        if let _ = tableView.cellForRow(at: indexPath) {
+            self.performSegue(withIdentifier: "showHealing", sender: self)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -138,14 +144,21 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showHealing" {
+            if let destination = segue.destination as? HealingViewController {
+                
+                let path = tableView.indexPathForSelectedRow
+                let cell = tableView.cellForRow(at: path!) as! HealingCell
+                
+                destination.username = (cell.userNameLabel.text)!
+                destination.healingTitle = (cell.titleLabel.text)!
+                destination.healingContent = (cell.healingContentLabel.text)!
+            }
+        }
     }
-    */
-
 }

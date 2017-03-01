@@ -10,10 +10,20 @@ import UIKit
 
 class HealingViewController: UIViewController {
 
+    @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblHealingContent: UILabel!
+    
+    var username = ""
+    var healingTitle = ""
+    var healingContent = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        lblUserName.text = username
+        lblTitle.text = healingTitle
+        lblHealingContent.text = healingContent
     }
 
     override func didReceiveMemoryWarning() {
