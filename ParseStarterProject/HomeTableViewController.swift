@@ -62,7 +62,7 @@ class HomeTableViewController: UITableViewController {
         
         refresher = UIRefreshControl()
         refresher.attributedTitle = NSAttributedString(string: "Refreshing...")
-        refresher.addTarget(self, action: "refresh", for: UIControlEvents.valueChanged)
+        refresher.addTarget(self, action: #selector(HomeTableViewController.refresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refresher)
         
         refresh()
