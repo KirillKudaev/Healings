@@ -189,13 +189,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hrs ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JS-OV-dc8">
-                                            <rect key="frame" x="258" y="162" width="117" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWa-hH-Kgx">
                                             <rect key="frame" x="102" y="38" width="265" height="34"/>
                                             <constraints>
@@ -206,17 +199,29 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hrs ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JS-OV-dc8">
+                                            <rect key="frame" x="161" y="162" width="206" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="S6u-UA-X9N"/>
+                                                <constraint firstAttribute="width" constant="206" id="zaJ-r5-ZEz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IWa-hH-Kgx" firstAttribute="trailing" secondItem="pof-yj-mn2" secondAttribute="trailingMargin" id="W7n-Sy-SPZ"/>
                                         <constraint firstAttribute="trailing" secondItem="yKw-jR-xCR" secondAttribute="trailing" constant="8" id="ae2-dP-snB"/>
+                                        <constraint firstItem="5JS-OV-dc8" firstAttribute="trailing" secondItem="pof-yj-mn2" secondAttribute="trailingMargin" id="eSk-9Y-DAU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5JS-OV-dc8" secondAttribute="bottom" constant="0.5" id="ehc-Up-RJb"/>
                                         <constraint firstItem="IWa-hH-Kgx" firstAttribute="top" secondItem="yKw-jR-xCR" secondAttribute="bottom" constant="8" id="rGo-ih-i7g"/>
                                         <constraint firstItem="yKw-jR-xCR" firstAttribute="top" secondItem="pof-yj-mn2" secondAttribute="top" id="u2D-b4-XeD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="healingContentLabel" destination="Hj6-Kb-OGT" id="Vej-BS-6VL"/>
-                                    <outlet property="numberOfHrsAgo" destination="5JS-OV-dc8" id="F9v-lB-fy9"/>
+                                    <outlet property="lblTime" destination="5JS-OV-dc8" id="a0p-1g-Rng"/>
                                     <outlet property="titleLabel" destination="IWa-hH-Kgx" id="E0a-2M-JGw"/>
                                     <outlet property="userImage" destination="ELJ-KU-EMN" id="jap-6V-bVB"/>
                                     <outlet property="userNameLabel" destination="yKw-jR-xCR" id="jIM-CJ-2vx"/>
@@ -274,8 +279,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3 HRS ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfT-lY-Way">
-                                <rect key="frame" x="242" y="531" width="117" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 HRS ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfT-lY-Way">
+                                <rect key="frame" x="116" y="531" width="243" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="NRd-aZ-lkR"/>
+                                    <constraint firstAttribute="height" constant="24" id="o0e-Ka-6xM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -297,13 +306,14 @@
                     </view>
                     <connections>
                         <outlet property="lblHealingContent" destination="tpd-s5-tAr" id="eq4-iF-7gt"/>
+                        <outlet property="lblTime" destination="XfT-lY-Way" id="7Gb-Po-h5q"/>
                         <outlet property="lblTitle" destination="tgg-1y-7nn" id="KCb-mO-zc1"/>
                         <outlet property="lblUserName" destination="AfM-EM-Fiu" id="q9L-mt-C1o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Toe-tA-2hl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3476" y="-99"/>
+            <point key="canvasLocation" x="3476" y="-99.400299850074973"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bJp-iD-uNu">

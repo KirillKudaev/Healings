@@ -13,8 +13,7 @@ class HealingCell: UITableViewCell {
     @IBOutlet var userImage: UIImageView!
     
     @IBOutlet var userNameLabel: UILabel!
-
     @IBOutlet var healingContentLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var numberOfHrsAgo: UILabel!
+    @IBOutlet var lblTime: UILabel!
 }

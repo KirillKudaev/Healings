@@ -26,7 +26,7 @@ class HomeTableViewController: UITableViewController {
                 for object in objects! {
                     
                     var healing: Healing
-                    
+                                    
                     if (object["anon"] as! Bool == true) {
                         healing = Healing(anon: object["anon"] as! Bool,
                                           title: object["title"] as! String,
@@ -110,7 +110,13 @@ class HomeTableViewController: UITableViewController {
         
         cell.titleLabel.text = self.healingsArray[indexPath.row].title
         cell.healingContentLabel.text = self.healingsArray[indexPath.row].body
-        cell.numberOfHrsAgo.text = "3 HRS AGO"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy HH:mm:ss"
+        let createdAt = dateFormatter.string(from:self.healingsArray[indexPath.row].createdAt)
+        
+        cell.lblTime.text = createdAt
+        
         //cell.userImage.image = UIImage(named: "AnonMask.png")
         return cell
     }
@@ -171,6 +177,7 @@ class HomeTableViewController: UITableViewController {
                 destination.username = (cell.userNameLabel.text)!
                 destination.healingTitle = (cell.titleLabel.text)!
                 destination.healingContent = (cell.healingContentLabel.text)!
+                destination.time = (cell.lblTime.text)!
             }
         }
     }

@@ -13,10 +13,12 @@ class HealingViewController: UIViewController {
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblHealingContent: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
     
     var username = ""
     var healingTitle = ""
     var healingContent = ""
+    var time = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class HealingViewController: UIViewController {
         lblUserName.text = username
         lblTitle.text = healingTitle
         lblHealingContent.text = healingContent
+        lblTime.text = time
     }
 
     override func didReceiveMemoryWarning() {
