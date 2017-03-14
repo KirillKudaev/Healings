@@ -64,8 +64,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         
                         var displayErrorMessage = "Please try again later."
                         
-                        if let errorMesage = error?.userInfo["error"] as? String {
-                            displayErrorMessage = errorMesage
+                        if let errorMessage = error?.userInfo["error"] as? String {
+                            displayErrorMessage = errorMessage
                         }
                         
                         self.createOkAlert(title: "Signup Error", message: displayErrorMessage)
@@ -91,8 +91,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         
                         var displayErrorMessage = "Please try again later."
                         
-                        if let errorMesage = error?.userInfo["error"] as? String {
-                            displayErrorMessage = errorMesage
+                        if let errorMessage = error?.userInfo["error"] as? String {
+                            displayErrorMessage = errorMessage
                         }
                         
                         self.createOkAlert(title: "Login Error", message: displayErrorMessage)

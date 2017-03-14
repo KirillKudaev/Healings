@@ -16,9 +16,10 @@ struct Healing {
     var body: String
     var createdAt: Date
     var updatedAt: Date
+    var numOfLikes: Int
     
     // This constructor is for: A non-anonymous public healing
-    init(userName: String, anon: Bool, title: String, body: String, createdAt: Date, updatedAt: Date) {
+    init(userName: String, anon: Bool, title: String, body: String, createdAt: Date, updatedAt: Date, numOfLikes: Int) {
         
         self.userName = userName
         self.anon = anon
@@ -26,15 +27,17 @@ struct Healing {
         self.body = body
         self.createdAt = createdAt as Date
         self.updatedAt = updatedAt as Date
+        self.numOfLikes = numOfLikes
     }
     
     // This constructor is for: An anonymous public healing
-    init(anon: Bool, title: String, body: String, createdAt: Date, updatedAt: Date) {
+    init(anon: Bool, title: String, body: String, createdAt: Date, updatedAt: Date, numOfLikes: Int) {
         
         self.anon = anon
         self.title = title
         self.body = body
         self.createdAt = createdAt as Date
         self.updatedAt = updatedAt as Date
+        self.numOfLikes = numOfLikes
     }
 }

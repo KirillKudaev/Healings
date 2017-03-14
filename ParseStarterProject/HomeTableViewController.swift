@@ -32,14 +32,16 @@ class HomeTableViewController: UITableViewController {
                                           title: object["title"] as! String,
                                           body: object["body"] as! String,
                                           createdAt: object.createdAt!,
-                                          updatedAt: object.updatedAt!)
+                                          updatedAt: object.updatedAt!,
+                                          numOfLikes: (object["likes"] as! Int))
                     } else {
                         healing = Healing(userName: object["username"] as! String,
                                           anon: object["anon"] as! Bool,
                                           title: object["title"] as! String,
                                           body: object["body"] as! String,
                                           createdAt: object.createdAt!,
-                                          updatedAt: object.updatedAt!)
+                                          updatedAt: object.updatedAt!,
+                                          numOfLikes: (object["likes"] as! Int))
                     }
                     
                     self.healingsArray.append(healing)
@@ -116,7 +118,7 @@ class HomeTableViewController: UITableViewController {
         let createdAt = dateFormatter.string(from:self.healingsArray[indexPath.row].createdAt)
         
         cell.lblTime.text = createdAt
-        
+        cell.lblLikes.text = String(self.healingsArray[indexPath.row].numOfLikes)
         //cell.userImage.image = UIImage(named: "AnonMask.png")
         return cell
     }

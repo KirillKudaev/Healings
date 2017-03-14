@@ -9,9 +9,10 @@
 import UIKit
 
 class HealingCell: UITableViewCell {
-
-    @IBOutlet var userImage: UIImageView!
     
+    @IBOutlet var userImage: UIImageView!
+    @IBOutlet var lblLikes: UILabel!
+   
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var healingContentLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!

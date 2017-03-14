@@ -19,6 +19,7 @@ class HealingViewController: UIViewController {
     var healingTitle = ""
     var healingContent = ""
     var time = ""
+    var likes = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,6 @@ class HealingViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -44,5 +44,4 @@ class HealingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

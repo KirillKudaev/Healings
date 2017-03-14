@@ -54,6 +54,7 @@ class ShareViewController: UIViewController, UITextFieldDelegate {
             healing["title"] = titleTextField.text
             healing["body"] = healingText.text
             healing["anon"] = anonSwitch.isOn
+            healing["likes"] = 0
             
             healing.saveInBackground { (succcess, error) in
                 
