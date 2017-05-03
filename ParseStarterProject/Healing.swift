@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Parse
 
 struct Healing {
     var userName: String?
